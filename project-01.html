@@ -65,36 +65,20 @@
 					</span>
 				</button>
 				<ul class="nav-list">
-					<li class="nav-list__item">
-						<a href="index.html#about" class="nav-list__link">About</a>
-					</li>
-					<li class="nav-list__item">
-						<a href="index.html#services" class="nav-list__link">Services</a>
-					</li>
-					<li class="nav-list__item">
-						<a href="index.html#works" class="nav-list__link">Works</a>
-					</li>
-					<li class="nav-list__item">
-						<a href="index.html#contact" class="nav-list__link">Contact</a>
-					</li>
+					
+                    <!-- your nav items will be inserted using javascript. If you want to edit them, find the "includes" folder and edit "header.html" -->
+                    
 				</ul>
 			</nav>
             
             <!-- end navigation -->
             
-            
-            
-            
-            
-            
-            
-            
+
             
 		</header>
         
         
-        
-        
+
         
         <!-- top section -->
 		<main class="content content-project">
@@ -232,66 +216,14 @@
 		</main>
 
         
-        <!-- copy and paste the footer from the home page here: -->
-        
 		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<ul class="social-list">
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.instagram.com/natalia_kosarieva/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-							</li>
-
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.behance.net/natalia_k" target="_blank"><i class="fa fa-behance" aria-hidden="true"></i></a>
-							</li>
-
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-							</li>
-
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.facebook.com/natalia.kosarieva" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							</li>
-
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://twitter.com/papernatali" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							</li>
-
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://dribbble.com/Natalia_k" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-							</li>
-						</ul>
-					</div> <!-- end .col-md-6 -->
-
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<div class="logo footer-logo">
-							<a class="logo__text" href="/" title="Minimalist - home page">Minimalist</a>
-							<!-- Reccoment if you want to use image as site logo -->
-							<!-- <img class="logo__image" src="img/logo.png" alt="Logo"> -->
-							<p class="copyright">
-								&copy; 2016 All rights reserved.
-							</p>
-						</div>
-					</div> 
-					
-				</div> 
-			</div> 
+			
+            <!-- your footer will be inserted here with javascript. If you want to edit the footer, go to the 'includes' folder and find the 'footer.html' file -->
+            
 		</footer>
         
         <!-- end footer -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
 	</div>
 
@@ -312,6 +244,15 @@
 	<!-- Scripts =========================================================== -->
 	<script src="js/external/jquery-3.1.1.min.js"></script>
 	<script src="js/external/owl.carousel.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $( "ul.nav-list" ).load( "includes/header.html" );
+            $( "footer" ).load( "includes/footer.html" );
+        });
+        
+    </script>
+    
 	<script src="js/main.js"></script>
 </body>
 </html>

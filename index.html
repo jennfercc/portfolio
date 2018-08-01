@@ -84,7 +84,7 @@
             
             
             
-            <!-- This is your navigation menu. If you add a new page, or modify a page, make sure you add it into the nav links below -->
+            <!-- This is your navigation menu. -->
             
 			<nav class="navigation">
 				<button class="nav__toggle" type="button" title="Toggle menu navigation">
@@ -101,31 +101,7 @@
 				<ul class="nav-list">
                     
                     
-                    <!-- this is an item in your navigation menu. You can change it's title, delete it, or copy and paste it to add a new menu item. -->
-                    
-                    
-                    <!-- nav item 1 -->
-					<li class="nav-list__item">
-						<a href="#about" class="nav-list__link">About</a>
-					</li>
-                    
-
-                    <!-- nav item 2 -->
-					<li class="nav-list__item">
-						<a href="#services" class="nav-list__link">Services</a>
-					</li>
-                    
-                    
-                    <!-- nav item 3 -->
-					<li class="nav-list__item">
-						<a href="#works" class="nav-list__link">Works</a>
-					</li>
-                    
-                    
-                    <!-- nav item 4 -->
-					<li class="nav-list__item">
-						<a href="#contact" class="nav-list__link">Contact</a>
-					</li>
+                   <!-- your nav items will be inserted using javascript. If you want to edit them, find the "includes" folder and edit "header.html" -->
                     
                     
 				</ul>
@@ -361,6 +337,7 @@
 								<a class="btn btn-primary btn-hover-01" href="https://dribbble.com/Natalia_k">View more</a>
 							</div>
 -->
+                            </div>
 
 						</div> <!-- end .col-md-12 -->
 					</div> <!-- end .row -->
@@ -476,93 +453,14 @@
 		</main>
 
 		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<ul class="social-list">
-                            
-                            
-                            <!-- This is a social icon link in your footer -->
-							<li class="social-list__item">
-                                
-                                <!-- change the href="" url to your url -->
-								<a class="social-list__link" href="https://www.instagram.com/natalia_kosarieva/" target="_blank">
-                                    
-                                    <!-- the class="" is from font awesome. Look up which font awesome icon you want to use and paste the class name between the quotation marks -->
-                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                                </a>
-							</li>
-                            
-                            
-                            
-                            <!-- BEHANCE -->
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.behance.net/natalia_k" target="_blank">
-                                    <i class="fa fa-behance" aria-hidden="true"></i>
-                                </a>
-							</li>
-                            
-                            
-                            <!-- LINKEDIN -->
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.linkedin.com/" target="_blank">
-                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                </a>
-							</li>
-                            
-                            
-                            <!-- FACEBOOK -->
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://www.facebook.com/natalia.kosarieva" target="_blank">
-                                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                                </a>
-							</li>
-
-                            
-                            <!-- TWITTER -->
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://twitter.com/papernatali" target="_blank">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a>
-							</li>
-
-                            
-                            <!-- DRIBBBLE -->
-							<li class="social-list__item">
-								<a class="social-list__link" href="https://dribbble.com/Natalia_k" target="_blank">
-                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                </a>
-							</li>
-                            
-                            
-                            
-                            
-                            
-						</ul>
-                        
-					</div> <!-- end .col-md-6 -->
-
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<div class="logo footer-logo">
-							<a class="logo__text" href="/" title="Minimalist - home page">Jennifer Creek</a>
-							
-                            
-                            <!-- If you used an image logo in your header, uncomment the next line and use your image here too -->
-							<!-- <img class="logo__image" src="img/logo.png" alt="Logo"> -->
-							
-                            
-                            <p class="copyright">
-								&copy; 2018 All rights reserved.
-							</p>
-						</div>
-					</div> <!-- end .col-md-6 -->
-					
-				</div> <!-- end .row -->
-			</div> <!-- end .container -->
+			
+            <!-- your footer will be inserted here with javascript. If you want to edit your footer, go to the "includes" folder and find "footer.html" -->
+            
 		</footer>
 	</div>
 
 	<!-- OVERLAY -->
+<!--
 	<div class="overlay is-hidden">
 		<div class="loader"></div>
 		<div class="long-loading-container is-hidden">
@@ -571,15 +469,28 @@
 			<a class="btn btn-primary js-direct" href="" data-disabled="true">Direct</a>
 		</div>
 	</div>
+-->
 	<!-- end OVERLAY -->
 
 	<!-- Scripts =========================================================== -->
 	<script src="js/external/jquery-3.1.1.min.js"></script>
 	<script src="js/external/owl.carousel.min.js"></script>
+<!--
 	<script src="js/external/contact-form.js"></script>
     <script type="text/javascript">
         new ContactForm('#contact-form', {});
     </script>
+-->
+
+    <!-- this adds your navigation and footer to every page -->
+    <script>
+        $(document).ready(function () {
+            $( "ul.nav-list" ).load( "includes/header.html" );
+            $( "footer" ).load( "includes/footer.html" );
+        });
+        
+    </script>
+        
 	<script src="js/main.js"></script>
 </body>
 </html>
