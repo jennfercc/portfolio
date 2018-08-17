@@ -8,12 +8,12 @@
 
 		this.dom = {};
 		this.dom.overlay 			= document.querySelector('.overlay');
-		this.dom.longLoading 		= this.dom.overlay.querySelector('.long-loading-container');
+//		this.dom.longLoading 		= this.dom.overlay.querySelector('.long-loading-container');
 		this.dom.containerToInsert 	= document.querySelector('.content-insert');
 
-		document.addEventListener('DOMContentLoaded', function(){
-			this.initTestimonialSlider();
-		}.bind(this));
+//		document.addEventListener('DOMContentLoaded', function(){
+//			this.initTestimonialSlider();
+//		}.bind(this));
 
 		this.hostName      = location.hostname;
 		this.loadTimeout   = null;
@@ -30,151 +30,155 @@
 				if (this.oldLinks.length > 0) {
 
 					this.isBack = true;
-					this.handleUrl(this.oldLinks[this.oldLinks.length - 1]);
+//					this.handleUrl(this.oldLinks[this.oldLinks.length - 1]);
 				}
 			}.bind(this);
 
-			this.initPageTransition();
+//			this.initPageTransition();
 		}
 		
 		this.initNavigation();
 	}
 
-	Minimalist.prototype.initTestimonialSlider = function() {
+//	Minimalist.prototype.initTestimonialSlider = function() {
+//
+//		var owlContainer = $(".testimonials");
+//
+//		if (owlContainer.length <= 0 ) {
+//			return null;
+//		}
+//
+//		owlContainer.owlCarousel({ 
+//			loop:    true,
+//			nav:     true,
+//			navText: ['', ''],
+//			items:   1
+//		});
+//	}
 
-		var owlContainer = $(".testimonials");
+//	Minimalist.prototype.initPageTransition = function() {
+//
+//		var links, link, url;
+//
+//		links = document.querySelectorAll('a');
+//
+//		if (links.length <= 0 ) {
+//			return null;
+//		}
+//
+//		for (var i = 0, max = links.length; i < max; i++) {
+//
+//			link = links[i];
+//			url  = link.href;
+//
+//			if (url.indexOf('#') >= 0 || url.indexOf(this.hostName) < 0 || link.getAttribute('data-disabled') == 'true' || link.classList.contains('nav-list__link')) {
+//				continue;
+//			}
+//
+//			links[i].onclick = function(e){
+//				e.preventDefault();
+//
+//				var url = e.currentTarget.href;	
+//
+//				this.isBack = false;
+//				this.handleUrl(url);
+//			}.bind(this);
+//		}		
+//	}
 
-		if (owlContainer.length <= 0 ) {
-			return null;
-		}
+    //
+    
+//	Minimalist.prototype.handleUrl = function(url) {
+//
+//		var transitionEnd;
+//
+//		this.showOverlay();
+//
+//		transitionEnd = function(){
+//			this.request(url, this.pageTransition, this.pageFailedTransition);	
+//			this.dom.overlay.removeEventListener('transitionend', transitionEnd);
+//		}.bind(this);
+//
+//		this.dom.overlay.addEventListener('transitionend', transitionEnd, false);
+//
+//		this.loadTimeout = setTimeout(function() {
+//
+//			var backBtn, directBtn;
+//
+//			backBtn   = this.dom.longLoading.querySelector('.js-overlay-hide');
+//			directBtn = this.dom.longLoading.querySelector('.js-direct');
+//
+//			this.dom.longLoading.classList.remove('is-hidden');
+//			this.dom.overlay.firstElementChild.classList.add('is-hidden');
+//
+//			directBtn.onclick = function() {
+//				this.hideOverlay();
+//				this.xhttp.removeEventListener('load', this.pageLoaded);
+//				location.replace(url);
+//			}.bind(this);
+//
+//			backBtn.onclick = function() {
+//				this.hideOverlay();
+//				this.xhttp.removeEventListener('load', this.pageLoaded);
+//			}.bind(this);
+//			
+//		}.bind(this), 5000);    
+//	}
 
-		owlContainer.owlCarousel({ 
-			loop:    true,
-			nav:     true,
-			navText: ['', ''],
-			items:   1
-		});
-	}
-
-	Minimalist.prototype.initPageTransition = function() {
-
-		var links, link, url;
-
-		links = document.querySelectorAll('a');
-
-		if (links.length <= 0 ) {
-			return null;
-		}
-
-		for (var i = 0, max = links.length; i < max; i++) {
-
-			link = links[i];
-			url  = link.href;
-
-			if (url.indexOf('#') >= 0 || url.indexOf(this.hostName) < 0 || link.getAttribute('data-disabled') == 'true' || link.classList.contains('nav-list__link')) {
-				continue;
-			}
-
-			links[i].onclick = function(e){
-				e.preventDefault();
-
-				var url = e.currentTarget.href;	
-
-				this.isBack = false;
-				this.handleUrl(url);
-			}.bind(this);
-		}		
-	}
-
-	Minimalist.prototype.handleUrl = function(url) {
-
-		var transitionEnd;
-
-		this.showOverlay();
-
-		transitionEnd = function(){
-			this.request(url, this.pageTransition, this.pageFailedTransition);	
-			this.dom.overlay.removeEventListener('transitionend', transitionEnd);
-		}.bind(this);
-
-		this.dom.overlay.addEventListener('transitionend', transitionEnd, false);
-
-		this.loadTimeout = setTimeout(function() {
-
-			var backBtn, directBtn;
-
-			backBtn   = this.dom.longLoading.querySelector('.js-overlay-hide');
-			directBtn = this.dom.longLoading.querySelector('.js-direct');
-
-			this.dom.longLoading.classList.remove('is-hidden');
-			this.dom.overlay.firstElementChild.classList.add('is-hidden');
-
-			directBtn.onclick = function() {
-				this.hideOverlay();
-				this.xhttp.removeEventListener('load', this.pageLoaded);
-				location.replace(url);
-			}.bind(this);
-
-			backBtn.onclick = function() {
-				this.hideOverlay();
-				this.xhttp.removeEventListener('load', this.pageLoaded);
-			}.bind(this);
-			
-		}.bind(this), 5000);    
-	}
-
-	Minimalist.prototype.pageTransition = function(responseHTML, url) {
-
-		var fragment;
-
-		this.isLoaded = true;
-
-		window.scrollTo(0, 0);
-		clearTimeout(this.loadTimeout);
-
-        fragment = document.createElement('div');
-        fragment.innerHTML = responseHTML;
-
-        responseContainer = fragment.querySelector('.content-insert');
-        this.dom.containerToInsert.innerHTML = '';
-        this.dom.containerToInsert.innerHTML = responseContainer.innerHTML;
-
-        this.dom.longLoading.classList.add('is-hidden');
-        this.hideOverlay();
-
-        // Restart function
-        this.initPageTransition();
-        this.initNavigation();
-        this.initTestimonialSlider();
-
-        if (this.isBack) {
-        	this.oldLinks.pop();	
-		} else {
-			this.oldLinks.push(window.location.href);
-		}
-
-        window.history.pushState(null, null, url);    
-	}
-
-	Minimalist.prototype.pageFailedTransition = function(message) {
-		console.error(message);
-	}
-
-	Minimalist.prototype.showOverlay = function() {
-		this.dom.overlay.classList.remove('is-hidden');
-		this.dom.overlay.classList.add('is-vissible');
-	}
-
-	Minimalist.prototype.hideOverlay = function() {
-		this.dom.overlay.classList.remove('is-vissible');
-        this.dom.overlay.classList.add('is-hidden'); 
-	}
+//	Minimalist.prototype.pageTransition = function(responseHTML, url) {
+//
+//		var fragment;
+//
+//		this.isLoaded = true;
+//
+//		window.scrollTo(0, 0);
+//		clearTimeout(this.loadTimeout);
+//
+//        fragment = document.createElement('div');
+//        fragment.innerHTML = responseHTML;
+//
+//        responseContainer = fragment.querySelector('.content-insert');
+//        this.dom.containerToInsert.innerHTML = '';
+//        this.dom.containerToInsert.innerHTML = responseContainer.innerHTML;
+//
+//        this.dom.longLoading.classList.add('is-hidden');
+//        this.hideOverlay();
+//
+//        // Restart function
+//        this.initPageTransition();
+//        this.initNavigation();
+//        this.initTestimonialSlider();
+//
+//        if (this.isBack) {
+//        	this.oldLinks.pop();	
+//		} else {
+//			this.oldLinks.push(window.location.href);
+//		}
+//
+//        window.history.pushState(null, null, url);    
+//	}
+//
+//	Minimalist.prototype.pageFailedTransition = function(message) {
+//		console.error(message);
+//	}
+//
+//	Minimalist.prototype.showOverlay = function() {
+//		this.dom.overlay.classList.remove('is-hidden');
+//		this.dom.overlay.classList.add('is-vissible');
+//	}
+//
+//	Minimalist.prototype.hideOverlay = function() {
+//		this.dom.overlay.classList.remove('is-vissible');
+//        this.dom.overlay.classList.add('is-hidden'); 
+//	}
 
 
 	// --------------------------- NAVIGATION ---------------------------
 	Minimalist.prototype.initNavigation = function(selector) {
 
 		var navToggle;
+        
+        console.log(selector)
 
 		this.dom.navContainer = document.querySelector('.navigation');
 

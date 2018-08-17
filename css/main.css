@@ -1,4 +1,7 @@
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* v1.4 */
+
 button, hr, input {
   overflow: visible; }
 
@@ -150,6 +153,10 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden; }
 
+a.inline, a.inline:hover {
+    text-decoration: underline;
+}
+
 a,
 a:hover {
   color: #000;
@@ -267,7 +274,7 @@ h5 {
 .hero {
   position: relative; }
   .hero .hero-content {
-    margin-top: -54px;
+    margin-top: 100px;
     position: absolute;
     top: 40%;
     left: 10%;
@@ -299,7 +306,7 @@ h5 {
 
 .hero-image {
   height: 100vh;
-  height: calc(100vh - 83px); }
+  height: calc(100vh - 200px); }
 
 /*-----------------------------------------------------------*/
 /*--------------------- COMPOSING STYLES --------------------*/
@@ -376,7 +383,8 @@ h5 {
   clear: both; }
   .project .image-holder {
     max-width: 555px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
   .project .image-holder img {
     width: 100%;
     -ms-transition: transform 400ms ease-in-out;
@@ -395,6 +403,21 @@ h5 {
     -ms-transform: translateX(-127px);
     transform: translateX(-127px); }
 
+/* Overlay Fade project */
+.project .image-holder picture img{
+  display: inline;
+
+}
+
+.project .image-holder img.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+}
+
+
+
 .project--opposite {
   overflow: hidden; }
   .project--opposite .image-holder {
@@ -409,6 +432,27 @@ h5 {
   .project--opposite .caption:before {
     left: auto;
     right: 0; }
+
+/* Overlay Fade project--opposite */
+.project--opposite .image-holder img.overlay-image {
+  transform:rotate(180deg);
+  left: auto;
+  right: 0;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 /*-----------------------------------------------------------*/
 /*--------------------- TESTIMONIALS STYLES -----------------*/
@@ -544,8 +588,10 @@ h5 {
 /*--------------------- Social List -------------------------*/
 .social-list {
   list-style: none; }
+
   .social-list .social-list__item {
     display: inline-block; }
+
   .social-list .social-list__link {
     padding: 5px;
     display: inline-block;
@@ -809,6 +855,17 @@ h5 {
 .project-items .project-item {
   margin-bottom: 95px; }
 
+ul.myrole {
+    list-style-type: none;
+   margin-bottom: 40px;
+
+  }
+
+  ul.myrole li {
+  
+    font-style: italic;
+  }
+
 /*-----------------------------------------------------------*/
 /*--------------------- NAVIGATION STYLES -------------------*/
 /*-----------------------------------------------------------*/
@@ -911,9 +968,17 @@ h5 {
 /*-----------------------------------------------------------*/
 /*--------------------- RESPONSIVE STYLES -------------------*/
 /*-----------------------------------------------------------*/
+
+@media (min-width: 1400px) {
+    .onlyForMobile {
+        display: none !important;
+    }
+}
 @media (max-width: 1400px) {
   .hero .hero-content {
-    margin-top: 175px; } }
+    margin-top: 175px; }
+  .onlyForMobile {
+    display: none !important; }}
 
 @media (min-width: 769px) and (max-width: 992px) {
   .hero .hero-content {
@@ -927,7 +992,9 @@ h5 {
   .project .content {
     padding: 30px;
     -webkit-transform: translateX(0px);
-    transform: translateX(0px); } }
+    transform: translateX(0px); }
+  .onlyForMobile {
+    display: none !important; }}
 
 @media (min-width: 993px) and (max-width: 1200px) {
   .project .content {
@@ -937,7 +1004,9 @@ h5 {
     -webkit-transform: translateX(30px);
     transform: translateX(30px); }
   .about .image-holder {
-    max-width: 205px; } }
+    max-width: 205px; }
+    .onlyForMobile {
+        display: none !important; }}
 
 @media (max-width: 768px) {
   .section {
@@ -946,6 +1015,10 @@ h5 {
     margin-top: 47px; }
   .content-project {
     margin-bottom: 65px; }
+    
+  .onlyForMobile {
+        display: block !important;
+    }
   /*--------------------- Header ------------------------------*/
   .header {
     min-height: 47px;
@@ -1098,7 +1171,7 @@ h5 {
     margin-bottom: 75px; }
   .project .content {
     padding: 0;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
     position: relative;
     top: 0;
     left: 0;
@@ -1126,11 +1199,29 @@ h5 {
     left: -50%; }
   .project-items .image-holder {
     margin-bottom: 40px; }
-  .project-items .image-holder img {
+  
+    /* hide the fade overlay on mobile */
+    .project .image-holder img.overlay-image, .project--opposite .image-holder image.overlay-image {
+        display: none !important;   
+    }
+    
+    /*
+    .project-items .image-holder img {
     position: relative;
     left: -60px;
     width: 130%;
     width: calc(100% + 90px); }
+    
+    */
+    
+    .project-items .image-holder img {
+    position: relative;
+    left: -20px;
+    width: 100%;
+    width: calc(100% + 40px); }
+    
+    
+    
   /*--------------------- Contact Form -------------------------*/
   .contact .form {
     margin-top: 35px; }
@@ -1190,7 +1281,15 @@ h5 {
     text-align: center; }
   .footer-logo {
     margin-top: 32px;
-    margin-left: 0; } }
+    margin-left: 0; } 
+
+   .social-list .social-list__link {
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 20px; }
+    
+    
+}
 
 @media (max-width: 525px) {
   .nav .nav__item {
@@ -1244,4 +1343,11 @@ h5 {
   .nav .nav__item.disabled > a:focus .nav__desc {
     -webkit-transform: none;
     -ms-transform: none;
-    transform: none; } }
+    transform: none; } 
+
+    .social-list .social-list__link {
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 20px; }
+    
+}

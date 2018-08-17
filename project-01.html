@@ -7,17 +7,11 @@
 	<!-- Basic page needs ================================================== -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    
-    <!-- PROJECT TITLE IN BROWSER TAB -->
-    
-	<title>Jennifer Creek</title>
-    
-    
+	<title>Project 01 - MINIMALIST</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page info ========================================================= -->
-	<meta name="author" content="Jennifer Creek">
+	<meta name="author" content="Purple Subird">
 	<meta name="description" content="MINIMALIST - Portfolio">
 	<meta name="keywords" content="minimalist, portfolio, design">
 
@@ -46,16 +40,11 @@
 <body>
 	<div class="content-wrapper content-insert">
 		<header class="header">
-            
-            
-            <!-- If you make changes to your navigation on the home page, just delete this entire section and copy/paste the home page navigation here: -->
-            
 			<div class="logo">
-				<a class="logo__text" href="/" title="Minimalist - home page">Jennifer Creek</a>
+				<a class="logo__text" href="/" title="Minimalist - home page">Minimalist</a>
 				<!-- Reccoment if you want to use image as site logo -->
 				<!-- <img class="logo__image" src="img/logo.png" alt="Logo"> -->
 			</div>
-            
 			<nav class="navigation">
 				<button class="nav__toggle" type="button" title="Toggle menu navigation">
 					<span class="icon hamburger">
@@ -65,42 +54,34 @@
 					</span>
 				</button>
 				<ul class="nav-list">
-					
-                    <!-- your nav items will be inserted using javascript. If you want to edit them, find the "includes" folder and edit "header.html" -->
-                    
+					<li class="nav-list__item">
+						<a href="index.html#about" class="nav-list__link">About</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="index.html#services" class="nav-list__link">Services</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="index.html#works" class="nav-list__link">Works</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="index.html#contact" class="nav-list__link">Contact</a>
+					</li>
 				</ul>
 			</nav>
-            
-            <!-- end navigation -->
-            
-
-            
 		</header>
-        
-        
 
-        
-        <!-- top section -->
 		<main class="content content-project">
 			<!-- HERO IMAGE -->
 			<section class="section">
 				<div class="hero hero-project-image">
 					<div class="image-holder">
-                        
-                        <!-- Giant image at the top. Resolution: 1400x650 -->
-                        
 						<img src="img/projects/project-01/hero.jpg" alt="Unforgettable impression">
-                        
-                        
 					</div>
-				</div>
+				</div> <!-- end .hero -->
 			</section>
 			<!-- end HERO IMAGE -->
 
-            
-            
-            
-			<!-- TEXT SECTION - TITLE & DESCRIPTION OF PROJECT -->
+			<!-- ABOUT -->
 			<section id="about" class="section section-about-project">
 				<div class="container">
 					<div class="row">
@@ -110,10 +91,11 @@
 									Project 01
 								</h3>
 								<h2 class="headline">
-									ASAP Tire Technician Mobile App
+									Beautiful branding
 								</h2>
 								<p class="description">
-									UX Research, Interaction Design
+									Branding, Web Design<br>
+									Seconds / 2016
 								</p>
 							</div> <!-- end .col-md-6 -->
 							<div class="col-md-7 col-md-offset-1 col-sm-12">
@@ -125,54 +107,36 @@
 										Target audience is women who are passionate about achieving their dreams, building a successful online business, supporting other small businesses, and creating a life they love around their small children. They need a beautiful online presence, but are intimidated by the tech side of things and are limited the cost of high quality website development. Brand identity appeals to aspiring female business owners and seasoned ladypreneurs alike. Its refined and feminine style reflects the quality, passion, and professionalism.
 									</p>
 								</div>
-							</div>
-						</div> 
-					</div> 
-				</div> 
+							</div> <!-- end .col-md-6 -->
+						</div> <!-- end .about -->
+					</div> <!-- end .row -->
+				</div> <!-- end .container -->
 			</section>
 			<!-- end ABOUT -->
-            
-            
-            
-            
 
-			<!-- PROJECT IMAGES -->
+			<!-- PROJECT ITEMS -->
 			<section id="project-items" class="section section-project-items">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12">
 							<div class="project-items">								
-								
-                                
-                                <div class="image-holder project-item">
-                                    <!-- IMAGE resolution: 1800x1200 -->
+								<div class="image-holder project-item">
 									<img src="img/projects/project-01/project-img-01.jpg" alt="Item 01">
 								</div>
-                                
-                                
 								<div class="image-holder project-item">
-                                    <!-- IMAGE resolution: 2000x1328 -->
 									<img src="img/projects/project-01/project-img-02.jpg" alt="Item 02">
 								</div>
-                                
-                                
 								<div class="image-holder project-item">
-                                    <!-- IMAGE resolution: 1024x768 -->
 									<img src="img/projects/project-01/project-img-03.jpg" alt="Item 03">
 								</div>
-                                
-                                
-							</div>
-						</div> 
-					</div> 
-				</div> 
+							</div> <!-- end .project-items-->
+						</div> <!-- end .col-md-12 -->
+					</div> <!-- end .row -->
+				</div> <!-- end .container -->
 			</section>
 			<!-- end PROJECT ITEMS -->
-            
-            
-            
 
-			<!-- NAVIGATION - The back and forward arrows at the bottom of the project that take you to the next or previous project -->
+			<!-- NAVIGATION -->
 			<section id="project-nav" class="section section-project-nav">
 				<div class="container">
 					<div class="row">
@@ -180,8 +144,7 @@
 							<ul class="nav project-nav">
                                 
                                 
-                                <!-- THE PREVIOUS PROJECT -->
-                                <!-- this one is disabled because this is project 01, which means there isn't a previous project -->
+                                <!-- First Project -->
 								<li class="nav__item prev disabled">
 									<a href="javascript:void(0)" data-disabled="true">
 										<span class="icon arrow-left"></span>
@@ -189,47 +152,71 @@
 									</a>
 								</li>
                                 
-                                
-                                <!-- THE NEXT PROJECT -->
-                                <!-- if there isn't a next project because you're on the last project, just add "disabled" after the word "next" in the class name -->
 								<li class="nav__item next">
 									<a href="project-02.html" title="Next Project">
 										<span class="nav__desc">Next project</span>
 										<span class="icon arrow-right"></span>
 									</a>
 								</li>
-                                
+                                <!-- end first project -->
                                 
                                 
 							</ul>
-						</div> 
-					</div>
-				</div> 
+						</div> <!-- end .col-md-12 -->
+					</div> <!-- end .row -->
+				</div> <!-- end .container -->
 			</section>
 			<!-- end NAVIGATION -->
-            
-            
-            
-            
-            
-            
 		</main>
 
-        
 		<footer class="footer">
-			
-            <!-- your footer will be inserted here with javascript. If you want to edit the footer, go to the 'includes' folder and find the 'footer.html' file -->
-            
-		</footer>
-        
-        <!-- end footer -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<ul class="social-list">
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://www.instagram.com/natalia_kosarieva/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
 
-        
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://www.behance.net/natalia_k" target="_blank"><i class="fa fa-behance" aria-hidden="true"></i></a>
+							</li>
+
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							</li>
+
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://www.facebook.com/natalia.kosarieva" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							</li>
+
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://twitter.com/papernatali" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							</li>
+
+							<li class="social-list__item">
+								<a class="social-list__link" href="https://dribbble.com/Natalia_k" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+							</li>
+						</ul>
+					</div> <!-- end .col-md-6 -->
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="logo footer-logo">
+							<a class="logo__text" href="/" title="Minimalist - home page">Minimalist</a>
+							<!-- Reccoment if you want to use image as site logo -->
+							<!-- <img class="logo__image" src="img/logo.png" alt="Logo"> -->
+							<p class="copyright">
+								&copy; 2016 All rights reserved.
+							</p>
+						</div>
+					</div> <!-- end .col-md-6 -->
+					
+				</div> <!-- end .row -->
+			</div> <!-- end .container -->
+		</footer>
 	</div>
 
 	<!-- OVERLAY -->
-    <!-- i disabled this because it's dumb, ha -->
-<!--
 	<div class="overlay is-hidden">
 		<div class="loader"></div>
 		<div class="long-loading-container is-hidden">
@@ -238,21 +225,11 @@
 			<a class="btn btn-primary js-direct" href="" data-disabled="true">Direct</a>
 		</div>
 	</div>
--->
 	<!-- end OVERLAY -->
 
 	<!-- Scripts =========================================================== -->
 	<script src="js/external/jquery-3.1.1.min.js"></script>
 	<script src="js/external/owl.carousel.min.js"></script>
-    
-    <script>
-        $(document).ready(function () {
-            $( "ul.nav-list" ).load( "includes/header.html" );
-            $( "footer" ).load( "includes/footer.html" );
-        });
-        
-    </script>
-    
 	<script src="js/main.js"></script>
 </body>
 </html>
