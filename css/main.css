@@ -849,6 +849,21 @@ h5 {
   font-size: 16px;
   line-height: 30px; }
 
+/* custom code to left align hero image on About page for mobile */
+
+@media (max-width: 768px) {
+    .hero-project-image .image-holder img.imgLeftAlign {
+        left: -10%;
+    }
+}
+
+/*-----------------------------------------------------------*/
+/*--------------------- PROCESS STYLES ------------------------*/
+/*-----------------------------------------------------------*/
+ul.customUl {
+    padding-left: 40px
+}
+
 /*-----------------------------------------------------------*/
 /*--------------------- PROJECT ITEMS STYLES ----------------*/
 /*-----------------------------------------------------------*/
