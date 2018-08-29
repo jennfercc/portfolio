@@ -853,7 +853,7 @@ h5 {
 /*--------------------- PROJECT ITEMS STYLES ----------------*/
 /*-----------------------------------------------------------*/
 .project-items .project-item {
-  margin-bottom: 95px; }
+  margin-bottom: 30px; } /* was 95, changed to 30 */
 
 ul.myrole {
     list-style-type: none;
